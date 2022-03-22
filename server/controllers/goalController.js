@@ -48,6 +48,7 @@ const putGoal = asyncHandler( async (req, res) => {
 })
 
 const deleteGoal = asyncHandler( async (req, res) => {
+	const goal = await Goal.findById(req.params.id)
 
 	if(!goal) {
 		res.status(400)
